@@ -8,10 +8,4 @@ import { ThemeService } from './core/services/theme.service';
 })
 export class AppComponent {
   title = 'visionUI';
-
-  constructor(private themeService: ThemeService) {}
-
-  changeTheme(theme: string) {
-    this.themeService.switchTheme(theme);
-  }
 }
