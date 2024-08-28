@@ -1,6 +1,15 @@
 <a (click)="changeTheme('blue-light')" cursor-pointer>
-  <img src="path/to/light-theme-icon.svg" alt="Light Theme" />
+    <img src="path/to/light-theme-icon.svg" alt="Light Theme" />
 </a>
 <a (click)="changeTheme('blue-dark')" cursor-pointer>
-  <img src="path/to/dark-theme-icon.svg" alt="Dark Theme" />
+    <img src="path/to/dark-theme-icon.svg" alt="Dark Theme" />
 </a>
+
+<p-speedDial
+    [model]="items"
+    radius="140"
+    direction="up-left"
+    type="quarter-circle"
+    buttonClassName="p-button-success"
+    [ngStyle]="{ 'position': 'fixed', 'bottom': '8%', 'right': '4%' }">
+</p-speedDial>
