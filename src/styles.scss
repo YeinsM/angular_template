@@ -30,3 +30,11 @@ body {
 //   margin: 0;
 //   padding: 0;
 // }
+
+// Flag for mobile-only
+@media (min-width: 768px) {
+    .mobile-only {
+      display: none !important;
+    }
+  }
+  
