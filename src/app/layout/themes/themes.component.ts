@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ThemeService } from '../../core/services/theme.service';
-import { MenuItem } from 'primeng/api';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 

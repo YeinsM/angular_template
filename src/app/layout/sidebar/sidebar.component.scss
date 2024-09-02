@@ -1,4 +1,5 @@
 :host ::ng-deep .p-sidebar {
+<<<<<<< HEAD
     width: 300px;
     /* Adjust the width of the sidebar */
     background-color: #343a40;
@@ -17,3 +18,18 @@
 :host ::ng-deep .p-sidebar .p-sidebar-content {
     padding: 1rem;
 }
+=======
+  width: 300px; /* Adjust the width of the sidebar */
+  background-color: #343a40; /* Sidebar background color */
+  color: white; /* Sidebar text color */
+}
+
+:host ::ng-deep .p-sidebar .p-sidebar-header {
+  background-color: #495057; /* Header background */
+  color: white; /* Header text color */
+}
+
+:host ::ng-deep .p-sidebar .p-sidebar-content {
+  padding: 1rem;
+}
+>>>>>>> d9936a6c6ed67342c001cdaa5aeefc2ae4a60634
