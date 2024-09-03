@@ -1,58 +1,28 @@
-.navbar {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem;
-    transition: margin-left 0.3s ease, width 0.3s ease;
-    /* Add transition for smooth resizing */
-
-    .navbar-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: width 0.3s ease;
-        /* Transition for navbar resizing */
-    }
-
-    .navbar-brand {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    .navbar-links {
-        display: flex;
-
-        .navbar-link {
-            margin-left: 1rem;
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .sidebar-toggle {
-        background-color: transparent;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-
-        &:hover {
-            color: #ddd;
-        }
-    }
+.p-menubar {
+    background-color: #2c3e50;
+    border: none;
 }
 
-/* Adjust the navbar width based on the sidebar's state */
-.sidebar-collapsed .navbar {
-    margin-left: 60px;
-    /* Adjust margin when the sidebar is collapsed */
+.p-menuitem-link {
+    color: #ecf0f1 !important;
 }
 
-.sidebar-expanded .navbar {
-    margin-left: 300px;
-    /* Adjust margin for expanded sidebar */
+.p-menuitem-link:hover {
+    background-color: #34495e !important;
+}
+
+.p-avatar {
+    border: 2px solid #ecf0f1;
+}
+
+.p-menuitem-link {
+    transition: background-color 0.3s ease;
+}
+
+.p-menuitem-link:hover {
+    background-color: #34495e !important;
+}
+
+.p-menuitem-link:active {
+    background-color: #1abc9c !important;
 }

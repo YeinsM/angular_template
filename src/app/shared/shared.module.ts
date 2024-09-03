@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 
 
 
@@ -8,10 +9,12 @@ import { ButtonModule } from 'primeng/button';
   declarations: [],
   imports: [
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    RippleModule,
   ],
   exports: [
-    ButtonModule
+    ButtonModule,
+    RippleModule
   ]
 })
 export class SharedModule { }
