@@ -1,7 +1,10 @@
 <p-sidebar [(visible)]="visible" [baseZIndex]="10000" [modal]="true">
     <h1 style="font-weight:normal">Sidebar Content</h1>
-    <button type="button" pButton icon="pi pi-check" label="Save" (click)="save()"></button>
-    <button type="button" pButton icon="pi pi-times" label="Cancel" (click)="cancel()"></button>
+    <ng-container *ngFor="let item of model; let i = index;">
+        <li app-menuitem *ngIf="!item.separator" [item]="item" [index]="i" [root]="true"></li>
+        <li *ngIf="item.separator" class="menu-separator"></li>
+    </ng-container>
 </p-sidebar>
 
 <p-button type="button" [rounded]="true" icon="pi pi-bars" (click)="toggleSidebar()"></p-button>
+
