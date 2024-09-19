@@ -5,7 +5,8 @@ import { CarEditComponent } from './car-edit/car-edit.component';
 
 const routes: Routes = [
   { path: '', component: CarViewComponent },
-  { path: 'edit', component: CarEditComponent },
+  { path: 'create', component: CarEditComponent },
+  { path: 'edit/:id', component: CarEditComponent },
 ];
 
 @NgModule({

@@ -1,23 +1,51 @@
-<!-- <div class="outer-container"> -->
-<!-- <div class="card-container"> -->
-    <div *ngFor="let car of cars">
-        <p-card header="{{ car.brand }} {{ car.model }}">
-            <ng-template pTemplate="header">
-                <img *ngIf="car.img" [src]="car.img" alt="{{ car.brand }} {{ car.model }}" class="card-image" />
-            </ng-template>
-            <p>
-                Year: {{ car.year }}<br>
-                Price: ${{ car.price }}<br>
-                Status: ${{ car.status }}
-            </p>
-            <ng-template pTemplate="footer">
-                <div class="flex" style="justify-content: space-between;">
-                    <button pButton pRipple icon="pi pi-check" class="p-button-success" [rounded]="true"></button>
-                    <button pButton pRipple icon="pi pi-pencil" class="p-button-primary" [rounded]="true"></button>
-                    <button pButton pRipple icon="pi pi-trash" class="p-button-danger" [rounded]="true"></button>
-                </div>
-            </ng-template>
-        </p-card>
+<div class="flex justify-content-end">
+  <p-button icon="pi pi-plus" [rounded]="true" routerLink="/car/create"></p-button>
+</div>
+
+<div class="card-container">
+  <div class="card-item" *ngFor="let car of cars">
+    <div>
+      <p-card header="{{ car.brand }} {{ car.model }}">
+        <ng-template pTemplate="header">
+          <img
+            *ngIf="car.img_url"
+            [src]="car.img_url"
+            alt="{{ car.brand }} {{ car.model }}"
+            class="card-image"
+          />
+        </ng-template>
+        <p>
+          Year: {{ car.year }}<br />
+          Price: {{ car.price | currency }}<br />
+          Status: {{ car.status }}
+        </p>
+        <ng-template pTemplate="footer">
+          <div class="flex" style="justify-content: space-between">
+            <button
+              pButton
+              pRipple
+              icon="pi pi-thumbs-up"
+              class="p-button-success"
+              [rounded]="true"
+            ></button>
+            <button
+              pButton
+              pRipple
+              icon="pi pi-pencil"
+              class="p-button-primary"
+              [rounded]="true"
+              routerLink="/car/edit/{{ car.id }}"
+            ></button>
+            <button
+              pButton
+              pRipple
+              icon="pi pi-thumbs-down"
+              class="p-button-danger"
+              [rounded]="true"
+            ></button>
+          </div>
+        </ng-template>
+      </p-card>
     </div>
-<!-- </div> -->
-<!-- </div> -->
+  </div>
+</div>

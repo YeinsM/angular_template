@@ -1,0 +1,9 @@
+.is-invalid {
+  border-color: red;
+}
+
+.button-container {
+  width: 100%;
+  float: right; // Hace que el botón se alinee a la derecha
+  text-align: right; // Alinea el contenido al final del contenedor
+}
