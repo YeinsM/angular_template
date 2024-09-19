@@ -73,6 +73,7 @@ export class CarEditComponent implements OnInit {
       error: (err) => console.log(err),
       complete: () => {
         Swal.fire('Car added successfully', '', 'success');
+        this.router.navigate(['/car']);
       },
     });
   }
