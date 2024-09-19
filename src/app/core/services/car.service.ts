@@ -7,7 +7,8 @@ import { Car } from '../models/car.model';
   providedIn: 'root',
 })
 export class CarService {
-  private apiUrl = 'http://ec2-174-129-130-178.compute-1.amazonaws.com:3001/cars'; // Replace with your actual API endpoint
+  private apiUrl =
+    'http://ec2-174-129-130-178.compute-1.amazonaws.com:3001/cars'; // Replace with your actual API endpoint
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +19,7 @@ export class CarService {
 
   // Get car by ID
   getCarById(id: number): Observable<Car> {
-    return this.http.get<Car>(`${this.apiUrl}/${id}`);
+    return this.http.get<Car>(`${this.apiUrl}/id/${id}`);
   }
 
   // Create a new car
@@ -28,7 +29,16 @@ export class CarService {
 
   // Update an existing car
   updateCar(id: number, car: Car): Observable<Car> {
-    return this.http.put<Car>(`${this.apiUrl}/${id}`, car);
+    return this.http.patch<Car>(`${this.apiUrl}/${id}`, car);
+  }
+
+  // Update an existing car
+  updateCarStatus(id: number, status: string): Observable<Car> {
+    const car = {
+      id: id,
+      status: status,
+    };
+    return this.http.patch<Car>(`${this.apiUrl}/${id}`, car);
   }
 
   // Delete a car

@@ -1,214 +1,101 @@
 <div class="mt-4">
-  <form [formGroup]="form" (ngSubmit)="submit()">
-    <div class="gap-3 grid">
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="text"
-            formControlName="brand"
-            appUppercase
-            pInputText
-            placeholder="Brand"
-            [ngClass]="{
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="gap-3 grid">
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="text" formControlName="brand" appUppercase pInputText placeholder="Brand" [ngClass]="{
               'is-invalid': submitted && f['brand'].errors
-            }"
-          />
-        </p-inputGroup>
-      </div>
+            }" />
+                </p-inputGroup>
+            </div>
 
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="text"
-            formControlName="model"
-            appUppercase
-            pInputText
-            placeholder="Model"
-            [ngClass]="{
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="text" formControlName="model" appUppercase pInputText placeholder="Model" [ngClass]="{
               'is-invalid': submitted && f['model'].errors
-            }"
-          />
-        </p-inputGroup>
-      </div>
+            }" />
+                </p-inputGroup>
+            </div>
 
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="number"
-            formControlName="year"
-            pInputText
-            placeholder="Year"
-            [ngClass]="{
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="number" formControlName="year" pInputText placeholder="Year" [ngClass]="{
               'is-invalid': submitted && f['year'].errors
-            }"
-          />
-        </p-inputGroup>
-      </div>
-    </div>
+            }" />
+                </p-inputGroup>
+            </div>
+        </div>
 
-    <div class="grid gap-3 mt-2">
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="number"
-            formControlName="price"
-            pInputText
-            placeholder="Price"
-            [ngClass]="{
+        <div class="grid gap-3 mt-2">
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="number" formControlName="price" pInputText placeholder="Price" [ngClass]="{
               'is-invalid': submitted && f['price'].errors
-            }"
-          />
-        </p-inputGroup>
-      </div>
+            }" />
+                </p-inputGroup>
+            </div>
 
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="number"
-            formControlName="initial"
-            pInputText
-            placeholder="Initial Payment"
-          />
-        </p-inputGroup>
-      </div>
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="number" formControlName="initial" pInputText placeholder="Initial Payment" />
+                </p-inputGroup>
+            </div>
 
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="text"
-            formControlName="url"
-            pInputText
-            placeholder="Url"
-            [ngClass]="{
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="text" formControlName="url" pInputText placeholder="Url" [ngClass]="{
               'is-invalid': submitted && f['url'].errors
-            }"
-          />
-        </p-inputGroup>
-      </div>
-    </div>
+            }" />
+                </p-inputGroup>
+            </div>
+        </div>
 
-    <div class="grid gap-3 mt-2">
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="text"
-            formControlName="vin"
-            pInputText
-            placeholder="Vin"
-          />
-        </p-inputGroup>
-      </div>
+        <div class="grid gap-3 mt-2">
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="text" formControlName="vin" pInputText placeholder="Vin" />
+                </p-inputGroup>
+            </div>
 
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="text"
-            formControlName="evaluation"
-            pInputText
-            placeholder="Evaluation"
-            upper
-          />
-        </p-inputGroup>
-      </div>
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="text" formControlName="evaluation" pInputText placeholder="Evaluation" upper />
+                </p-inputGroup>
+            </div>
 
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="text"
-            formControlName="img_url"
-            pInputText
-            placeholder="Image Url"
-          />
-        </p-inputGroup>
-      </div>
-    </div>
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="text" formControlName="img_url" pInputText placeholder="Image Url" />
+                </p-inputGroup>
+            </div>
+        </div>
 
-    <!-- <div class="grid gap-3 mt-2">
-      <div class="col">
-        <p-inputGroup>
-          <button
-            type="button"
-            pButton
-            icon="pi pi-check"
-            class="p-button-success"
-          ></button>
-          <input
-            type="text"
-            formControlName="status"
-            pInputText
-            placeholder="Status"
-          />
-        </p-inputGroup>
-      </div>
-    </div> -->
+        <div *ngIf="id" class="grid gap-3 mt-2">
+            <div class="col">
+                <p-inputGroup>
+                    <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+                    <input type="text" formControlName="status" appUppercase pInputText placeholder="Status" />
+                </p-inputGroup>
+            </div>
+        </div>
 
-    <div class="mt-4">
-      <p-floatLabel>
-        <textarea
-          formControlName="comment"
-          rows="5"
-          cols="30"
-          pInputTextarea
-        ></textarea>
-        <label for="float-input">Comment</label>
-      </p-floatLabel>
-    </div>
-    <div class="mt-4 d-flex button-container">
-      <p-button type="submit" [rounded]="true"> Guardar </p-button>
-    </div>
-  </form>
+        <div class="mt-4">
+            <p-floatLabel>
+                <textarea formControlName="comment" rows="5" cols="30" pInputTextarea></textarea>
+                <label for="float-input">Comment</label>
+            </p-floatLabel>
+        </div>
+        <div class="mt-4 d-flex button-container">
+            <p-button type="submit" [rounded]="true"> Guardar </p-button>
+        </div>
+    </form>
 </div>

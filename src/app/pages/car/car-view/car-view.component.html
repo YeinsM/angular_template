@@ -1,51 +1,64 @@
 <div class="flex justify-content-end">
-  <p-button icon="pi pi-plus" [rounded]="true" routerLink="/car/create"></p-button>
+    <p-button icon="pi pi-plus" [rounded]="true" routerLink="/car/create"></p-button>
 </div>
 
 <div class="card-container">
-  <div class="card-item" *ngFor="let car of cars">
-    <div>
-      <p-card header="{{ car.brand }} {{ car.model }}">
-        <ng-template pTemplate="header">
-          <img
-            *ngIf="car.img_url"
-            [src]="car.img_url"
-            alt="{{ car.brand }} {{ car.model }}"
-            class="card-image"
-          />
-        </ng-template>
-        <p>
-          Year: {{ car.year }}<br />
-          Price: {{ car.price | currency }}<br />
-          Status: {{ car.status }}
-        </p>
-        <ng-template pTemplate="footer">
-          <div class="flex" style="justify-content: space-between">
-            <button
-              pButton
-              pRipple
-              icon="pi pi-thumbs-up"
-              class="p-button-success"
-              [rounded]="true"
-            ></button>
-            <button
-              pButton
-              pRipple
-              icon="pi pi-pencil"
-              class="p-button-primary"
-              [rounded]="true"
-              routerLink="/car/edit/{{ car.id }}"
-            ></button>
-            <button
-              pButton
-              pRipple
-              icon="pi pi-thumbs-down"
-              class="p-button-danger"
-              [rounded]="true"
-            ></button>
-          </div>
-        </ng-template>
-      </p-card>
+    <div class="card-item" *ngFor="let car of cars">
+        <div>
+            <p-card header="{{ car.brand }} {{ car.model }}">
+                <ng-template pTemplate="header">
+                    <img *ngIf="car.img_url" [src]="car.img_url" alt="{{ car.brand }} {{ car.model }}" class="card-image" />
+                </ng-template>
+                <div class="flex align-items-center" style="justify-content: space-between;">
+                    <div class="mb-2">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td><b>Year:</b></td>
+                                <td style="padding-left: 20%;">{{ car.year }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Initial:</b></td>
+                                <td style="padding-left: 20%;">{{ car.initial | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Price:</b></td>
+                                <td style="padding-left: 20%;">{{ car.price | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Status:</b></td>
+                                <td style="padding-left: 20%;">{{ car.status }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>VIN:</b></td>
+                                <td style="padding-left: 20%;">{{ car.vin ? car.vin : "VIN Pendiente" }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-primary" [rounded]="true"
+                            routerLink="/car/edit/{{ car.id }}"></button>
+                    </div>
+                </div>
+                <textarea rows="5" cols="30" pInputTextarea [value]="car.comment" readonly></textarea>
+                <ng-template pTemplate="footer">
+                    <div class="flex" style="justify-content: space-between">
+                        <button pButton pRipple icon="pi pi-thumbs-up" class="p-button-success" [rounded]="true"
+                            (click)="changeStatus(car.id!, 'APPROVED')" pTooltip="Approved" tooltipPosition="top"></button>
+                        <button pButton pRipple icon="pi pi-thumbs-down" class="p-button-danger" [rounded]="true"
+                            (click)="changeStatus(car.id!, 'DISCARDED')" pTooltip="Discarded" tooltipPosition="top"></button>
+                        <button pButton pRipple icon="pi pi-heart" class="p-button-info" [rounded]="true" (click)="changeStatus(car.id!, 'FAVORITE')"
+                            pTooltip="Favorite" tooltipPosition="top"></button>
+                    </div>
+                    <div class="flex mt-2" style="justify-content: space-between">
+                        <button pButton pRipple icon="pi pi-forward" class="p-button-warning" [rounded]="true"
+                            (click)="changeStatus(car.id!, 'PENDING_VISIT')" pTooltip="Pending Visit" tooltipPosition="bottom"></button>
+                        <button pButton pRipple icon="pi pi-times" class="p-button-help" [rounded]="true" (click)="changeStatus(car.id!, 'CANCELLED')"
+                            pTooltip="Cancelled" tooltipPosition="bottom"></button>
+                        <button pButton pRipple icon="pi pi-times-circle" class="p-button-contrast" [rounded]="true"
+                            (click)="changeStatus(car.id!, 'SOLD')" pTooltip="Sold" tooltipPosition="bottom"></button>
+                    </div>
+                </ng-template>
+            </p-card>
+        </div>
     </div>
-  </div>
 </div>

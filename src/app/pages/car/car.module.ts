@@ -22,7 +22,7 @@ import { InputTextModule } from 'primeng/inputtext';
     InputGroupModule,
     InputTextareaModule,
     FloatLabelModule,
-    InputTextModule
+    InputTextModule,
   ],
 })
 export class CarModule {}

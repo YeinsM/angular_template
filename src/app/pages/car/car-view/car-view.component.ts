@@ -1,29 +1,13 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { Car, fakeCarList } from '../../../core/models/car.model';
-=======
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../../../core/models/car.model';
 import { CarService } from '../../../core/services/car.service';
->>>>>>> 81d449b700df76efd666422720eb50ff60cb9bf3
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-car-view',
   templateUrl: './car-view.component.html',
   styleUrl: './car-view.component.scss',
 })
-<<<<<<< HEAD
-export class CarViewComponent {
-  cars: Car[] = fakeCarList;
-
-  constructor() {}
-
-  getCars(): Car[] {
-    return this.cars;
-  }
-
-  
-=======
 export class CarViewComponent implements OnInit {
   cars: Car[] = [];
 
@@ -39,5 +23,15 @@ export class CarViewComponent implements OnInit {
       error: (error) => console.error(error),
     });
   }
->>>>>>> 81d449b700df76efd666422720eb50ff60cb9bf3
+
+  changeStatus(id: number, status: string) {
+    this.carService.updateCarStatus(id, status).subscribe({
+      next: () => {},
+      error: (err) => console.log(err),
+      complete: () => {
+        Swal.fire('Status changed successfully', '', 'success');
+        this.getCars();
+      },
+    });
+  }
 }
