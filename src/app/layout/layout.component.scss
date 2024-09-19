@@ -1,0 +1,8 @@
+.center-content {
+//   margin-top: 60px; /* Keeps space below the topbar */
+//   height: calc(100vh - 60px); /* Adjusts height based on topbar */
+//   display: flex;
+//   align-items: flex-start;
+  overflow-y: auto;
+  padding: 1rem; /* Add padding for better spacing on smaller screens */
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ThemeService } from './core/services/theme.service';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,8 @@ import { ThemeService } from './core/services/theme.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'visionUI';
 
-  constructor(private themeService: ThemeService) {}
-
-  changeTheme(theme: string) {
-    this.themeService.switchTheme(theme);
+  constructor(private primengConfig: PrimeNGConfig) {
+    this.primengConfig.ripple = true;
   }
 }
