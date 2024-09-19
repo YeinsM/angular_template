@@ -3,8 +3,9 @@
 // @import "primeng/resources/themes/bootstrap4-light-purple/theme.css";
 // @import "primeng/resources/themes/bootstrap4-dark-blue/theme.css";
 // @import "primeng/resources/themes/bootstrap4-dark-purple/theme.css";
-@import "primeng/resources/primeng.css";
+// @import "assets/styles/layout/layout.scss";
 @import "primeflex/primeflex.css";
+@import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
 // body {
@@ -33,9 +34,8 @@ body {
 // }
 
 // Flag for mobile-only
-@media (min-width: 768px) {
-    .mobile-only {
-      display: none !important;
-    }
-  }
-  
+// @media (min-width: 768px) {
+//   .mobile-only {
+//     display: none !important;
+//   }
+// }
