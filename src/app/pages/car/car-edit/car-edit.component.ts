@@ -42,7 +42,7 @@ export class CarEditComponent implements OnInit {
       initial: [''],
       url: ['', Validators.required],
       vin: [''],
-      status: [null],
+      status: ['PENDING'],
       evaluation: [''],
       img_url: [''],
       comment: [''],
