@@ -1,0 +1,17 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line if necessary */
+  justify-content: center; /* Distribute cards evenly */
+}
+
+.card-item {
+  margin: 1rem; /* Espaciado entre los cards */
+  flex-basis: 15%; /* Ajusta el ancho de cada card, 30% del contenedor */
+  max-width: 30%; /* Asegura que no se expanda más allá del 30% */
+}
+
+.card-image {
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  height: 250px; /* Ajusta la altura a 200px o lo que prefieras */
+  object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
+}

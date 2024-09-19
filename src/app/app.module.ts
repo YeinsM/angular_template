@@ -4,18 +4,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommonModule } from '@angular/common';
+import { LayoutModule } from './layout/layout.module';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()),
+    { provide: APP_BASE_HREF, useValue: '/' },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

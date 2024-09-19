@@ -44,6 +44,11 @@
                 "input": "src/assets/themes/theme-light-blue.scss",
                 "bundleName": "blue-light",
                 "inject": false
+              },
+              {
+                "input": "src/assets/themes/theme-dark-blue.scss",
+                "bundleName": "blue-dark",
+                "inject": false
               }
             ],
             "scripts": []
