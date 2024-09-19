@@ -44,7 +44,7 @@
                             routerLink="/car/edit/{{ car.id }}"></button>
                     </div>
                 </div>
-                <textarea rows="5" cols="30" pInputTextarea [value]="car.comment" readonly></textarea>
+                <textarea rows="5" cols="30" pInputTextarea [value]="car.comment ? car.comment : 'No hay comentarios'" readonly></textarea>
                 <ng-template pTemplate="footer">
                     <div class="flex" style="justify-content: space-between">
                         <button pButton pRipple icon="pi pi-thumbs-up" class="p-button-success" [rounded]="true"
