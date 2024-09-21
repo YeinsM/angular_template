@@ -10,8 +10,17 @@ import Swal from 'sweetalert2';
 })
 export class CarViewComponent implements OnInit {
   cars: Car[] = [];
+  selectedYear: number | null = null;
+  selectedStatus: string = "";
+  options: any[] = [{ label: "All", value: "" },
+  { label: "Approved", value: "APPROVED" },
+  { label: "Pending Visit", value: "PENDING_VISIT" },
+  { label: "Favorite", value: "FAVORITE" },
+  { label: "Sold", value: "SOLD" },
+  { label: "Cancelled", value: "CANCELLED" },
+  { label: "Discarded", value: "DISCARDED" }];
 
-  constructor(private carService: CarService) {}
+  constructor(private carService: CarService) { }
 
   ngOnInit(): void {
     this.getCars();
@@ -26,7 +35,7 @@ export class CarViewComponent implements OnInit {
 
   changeStatus(id: number, status: string) {
     this.carService.updateCarStatus(id, status).subscribe({
-      next: () => {},
+      next: () => { },
       error: (err) => console.log(err),
       complete: () => {
         Swal.fire('Status changed successfully', '', 'success');
@@ -34,4 +43,9 @@ export class CarViewComponent implements OnInit {
       },
     });
   }
+
+  onYearChange(year: string): void {
+    this.selectedYear = year ? parseInt(year, 10) : null;
+  }
+
 }

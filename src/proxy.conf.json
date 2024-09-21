@@ -1,0 +1,8 @@
+{
+  "/cars": {
+    "target": "http://ec2-174-129-130-178.compute-1.amazonaws.com:3001",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

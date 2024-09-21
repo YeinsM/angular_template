@@ -1,14 +1,33 @@
 <div class="flex justify-content-end">
-    <p-button icon="pi pi-plus" [rounded]="true" routerLink="/car/create"></p-button>
+    <p-dropdown class="mr-2" data-choices data-choices-search-false 
+    [options]="options"
+    [(ngModel)]="selectedStatus"
+    placeholder="Filtrar Por Estado"
+    data-bs-toggle="tooltip"
+    data-bs-trigger="hover"
+    data-bs-placement="top"
+    ngbTooltip="Filtrar Por Estado"/>
+
+        <p-button icon="pi pi-plus" [rounded]="true" routerLink="/car/create"></p-button>
 </div>
 
 <div class="card-container">
-    <div class="card-item" *ngFor="let car of cars">
+    <!-- <select (change)="onYearChange($event.target.value)">
+        <option value="">Select Year</option>
+        <option
+            *ngFor="let year of cars.map(car => car.year).filter((value, index, self) => self.indexOf(value) === index)">
+            {{ year }}
+        </option>
+    </select> -->
+
+    <!-- | filterByYearAsc:selectedYear | filterByStatus:selectedStatus -->
+    <div class="card-item" *ngFor="let car of cars | filterByStatus:selectedStatus">
         <div>
             <p-card>
                 <ng-template pTemplate="header">
                     <div style="text-align: center;">
-                        <img *ngIf="car.img_url" [src]="car.img_url" alt="{{ car.brand }} {{ car.model }}" class="card-image" />
+                        <img *ngIf="car.img_url" [src]="car.img_url" alt="{{ car.brand }} {{ car.model }}"
+                            class="card-image" />
                         <div>
                             <h3>{{ car.brand }} {{ car.model }}</h3>
                         </div>
@@ -44,21 +63,27 @@
                             routerLink="/car/edit/{{ car.id }}"></button>
                     </div>
                 </div>
-                <textarea rows="5" cols="30" pInputTextarea [value]="car.comment ? car.comment : 'No hay comentarios'" readonly></textarea>
+                <textarea rows="5" cols="30" pInputTextarea [value]="car.comment ? car.comment : 'No hay comentarios'"
+                    readonly></textarea>
                 <ng-template pTemplate="footer">
                     <div class="flex" style="justify-content: space-between">
                         <button pButton pRipple icon="pi pi-thumbs-up" class="p-button-success" [rounded]="true"
-                            (click)="changeStatus(car.id!, 'APPROVED')" pTooltip="Approved" tooltipPosition="top"></button>
+                            (click)="changeStatus(car.id!, 'APPROVED')" pTooltip="Approved"
+                            tooltipPosition="top"></button>
                         <button pButton pRipple icon="pi pi-thumbs-down" class="p-button-danger" [rounded]="true"
-                            (click)="changeStatus(car.id!, 'DISCARDED')" pTooltip="Discarded" tooltipPosition="top"></button>
-                        <button pButton pRipple icon="pi pi-heart" class="p-button-info" [rounded]="true" (click)="changeStatus(car.id!, 'FAVORITE')"
-                            pTooltip="Favorite" tooltipPosition="top"></button>
+                            (click)="changeStatus(car.id!, 'DISCARDED')" pTooltip="Discarded"
+                            tooltipPosition="top"></button>
+                        <button pButton pRipple icon="pi pi-heart" class="p-button-info" [rounded]="true"
+                            (click)="changeStatus(car.id!, 'FAVORITE')" pTooltip="Favorite"
+                            tooltipPosition="top"></button>
                     </div>
                     <div class="flex mt-2" style="justify-content: space-between">
                         <button pButton pRipple icon="pi pi-forward" class="p-button-warning" [rounded]="true"
-                            (click)="changeStatus(car.id!, 'PENDING_VISIT')" pTooltip="Pending Visit" tooltipPosition="bottom"></button>
-                        <button pButton pRipple icon="pi pi-times" class="p-button-help" [rounded]="true" (click)="changeStatus(car.id!, 'CANCELLED')"
-                            pTooltip="Cancelled" tooltipPosition="bottom"></button>
+                            (click)="changeStatus(car.id!, 'PENDING_VISIT')" pTooltip="Pending Visit"
+                            tooltipPosition="bottom"></button>
+                        <button pButton pRipple icon="pi pi-times" class="p-button-help" [rounded]="true"
+                            (click)="changeStatus(car.id!, 'CANCELLED')" pTooltip="Cancelled"
+                            tooltipPosition="bottom"></button>
                         <button pButton pRipple icon="pi pi-times-circle" class="p-button-contrast" [rounded]="true"
                             (click)="changeStatus(car.id!, 'SOLD')" pTooltip="Sold" tooltipPosition="bottom"></button>
                     </div>
