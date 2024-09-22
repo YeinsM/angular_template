@@ -79,7 +79,7 @@ export class CarEditComponent implements OnInit {
   }
 
   editCar(id: number) {
-    this.car = { id: Number(id), ...this.form.value };
+    this.car = this.form.value ;
     this.carService.updateCar(id, this.car).subscribe({
       next: () => {},
       error: (err) => console.log(err),

@@ -34,7 +34,7 @@ export class CarService {
   // Update an existing car
   updateCarStatus(id: number, status: string): Observable<Car> {
     const car = {
-      id: id,
+      //id: id,
       status: status,
     };
     return this.http.patch<Car>(`${this.apiUrl}/${id}`, car);
