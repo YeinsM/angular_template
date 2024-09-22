@@ -7,7 +7,7 @@ import { Car } from '../models/car.model';
   providedIn: 'root',
 })
 export class CarService {
-  private apiUrl = '/cars'; // Replace with your actual API endpoint
+  private apiUrl = 'https://app-cars-9de7ffaef2ec.herokuapp.com:8080/cars'; // Replace with your actual API endpoint
 
   constructor(private http: HttpClient) { }
 
