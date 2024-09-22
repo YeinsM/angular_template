@@ -29,7 +29,7 @@ export class CarViewComponent implements OnInit {
   getCars(): void {
     this.carService.getCars().subscribe({
       next: (cars) => (this.cars = cars),
-      error: (error) => console.error(error),
+      error: (error) => console.log(error),
     });
   }
 
