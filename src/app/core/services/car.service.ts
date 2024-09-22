@@ -7,7 +7,7 @@ import { Car } from '../models/car.model';
   providedIn: 'root',
 })
 export class CarService {
-  private apiUrl = '/cars'; // Replace with your actual API endpoint
+  private apiUrl = 'http://ec2-174-129-130-178.compute-1.amazonaws.com:3001/cars'; // Replace with your actual API endpoint
 
   constructor(private http: HttpClient) { }
 
