@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const distPath = path.join(__dirname, "dist/your-project-name/assets/themes");
+const distPath = path.join(__dirname, "dist/vision-ui/browser/assets/themes");
 const srcPath = path.join(__dirname, "src/assets/themes");
 
 if (!fs.existsSync(distPath)) {

@@ -4,11 +4,11 @@ const path = require("path");
 const app = express();
 
 // Servir los archivos estáticos desde la carpeta dist
-app.use(express.static(__dirname + "/dist/vision-ui"));
+app.use(express.static(__dirname + "/dist/vision-ui/browser"));
 
 // Redirigir todas las rutas a index.html
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname + "/dist/vision-ui/index.html"));
+  res.sendFile(path.join(__dirname + "/dist/vision-ui/browser/index.html"));
 });
 
 // Iniciar la aplicación en el puerto definido por Heroku o en el puerto 8080
