@@ -28,7 +28,21 @@ export class CarViewComponent implements OnInit {
 
   getCars(): void {
     this.carService.getCars().subscribe({
-      next: (cars) => (this.cars = cars),
+      next: (cars) => {
+        this.cars = cars.sort((a, b) => {
+          const statusOrder = [
+            'APPROVED',
+            'PENDING_VISIT',
+            'FAVORITE',
+            'CANCELLED',
+            'DISCARDED',
+            'SOLD'
+          ];
+
+          // Compara los índices de los estados en el array statusOrder
+          return statusOrder.indexOf(a.status!) - statusOrder.indexOf(b.status!);
+        });
+      },
       error: (error) => console.log(error),
     });
   }
@@ -47,5 +61,4 @@ export class CarViewComponent implements OnInit {
   onYearChange(year: string): void {
     this.selectedYear = year ? parseInt(year, 10) : null;
   }
-
 }
