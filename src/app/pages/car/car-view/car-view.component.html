@@ -1,14 +1,13 @@
 <div class="flex justify-content-end">
-    <p-dropdown class="mr-2" data-choices data-choices-search-false 
-    [options]="options"
-    [(ngModel)]="selectedStatus"
-    placeholder="Filtrar Por Estado"
-    data-bs-toggle="tooltip"
-    data-bs-trigger="hover"
-    data-bs-placement="top"
-    ngbTooltip="Filtrar Por Estado"/>
+    <div class="flex align-items-center mr-2">
+        <input type="text" pInputText placeholder="Search by url code" [(ngModel)]="searchTerm" class="w-8rem sm:w-auto" />
+    </div>
 
-        <p-button icon="pi pi-plus" [rounded]="true" routerLink="/car/create"></p-button>
+    <p-dropdown class="mr-2" data-choices data-choices-search-false [options]="options" [(ngModel)]="selectedStatus"
+        placeholder="Filtrar Por Estado" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top"
+        ngbTooltip="Filtrar Por Estado" />
+
+    <p-button icon="pi pi-plus" [rounded]="true" routerLink="/car/create"></p-button>
 </div>
 
 <div class="card-container">
@@ -20,7 +19,7 @@
         </option>
     </select> -->
 
-    <div class="card-item" *ngFor="let car of cars | filterByStatus:selectedStatus">
+    <div class="card-item" *ngFor="let car of cars | filterByStatus:selectedStatus | filterByUrl:searchTerm">
         <div>
             <p-card>
                 <ng-template pTemplate="header">
@@ -54,6 +53,9 @@
                             <tr>
                                 <td><b>VIN:</b></td>
                                 <td style="padding-left: 20%;">{{ car.vin ? car.vin : "Pendiente" }}</td>
+                            </tr>
+                            <tr>
+                                <td><a href="{{car.url}}">Link</a></td>
                             </tr>
                         </table>
                     </div>

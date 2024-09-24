@@ -9,9 +9,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { FilterByStatusPipe } from './filters/filterByStatus.filter';
 import { FilterByYearAscPipe } from './filters/filterByYear.filter';
 import { DropdownModule } from 'primeng/dropdown';
+import { FilterByUrlPipe } from './filters/filterByUrl.filter';
 
 @NgModule({
-  declarations: [UppercaseDirective, FilterByStatusPipe, FilterByYearAscPipe],
+  declarations: [UppercaseDirective, FilterByStatusPipe, FilterByYearAscPipe, FilterByUrlPipe],
   imports: [CommonModule,
     ButtonModule,
     RippleModule,
@@ -27,6 +28,6 @@ import { DropdownModule } from 'primeng/dropdown';
     TooltipModule,
     FilterByStatusPipe,
     FilterByYearAscPipe,
-    DropdownModule],
+    DropdownModule, FilterByUrlPipe],
 })
 export class SharedModule { }

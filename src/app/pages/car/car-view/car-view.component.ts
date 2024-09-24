@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrl: './car-view.component.scss',
 })
 export class CarViewComponent implements OnInit {
+  searchTerm: string = '';
   cars: Car[] = [];
   selectedYear: number | null = null;
   selectedStatus: string = "";
@@ -19,6 +20,8 @@ export class CarViewComponent implements OnInit {
   { label: "Sold", value: "SOLD" },
   { label: "Cancelled", value: "CANCELLED" },
   { label: "Discarded", value: "DISCARDED" }];
+
+  filteredCars = this.cars;
 
   constructor(private carService: CarService) { }
 
