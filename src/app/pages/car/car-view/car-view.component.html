@@ -48,7 +48,9 @@
                             </tr>
                             <tr>
                                 <td><b>Status:</b></td>
-                                <td style="padding-left: 20%;">{{ car.status }}</td>
+                                <td style="padding-left: 20%;">
+                                    <p-badge [value]="car.status" [severity]="getSeverity(car.status)" />
+                                </td>
                             </tr>
                             <tr>
                                 <td><b>VIN:</b></td>

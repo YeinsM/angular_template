@@ -12,15 +12,24 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FilterByUrlPipe } from './filters/filterByUrl.filter';
 
 @NgModule({
-  declarations: [UppercaseDirective, FilterByStatusPipe, FilterByYearAscPipe, FilterByUrlPipe],
-  imports: [CommonModule,
+  declarations: [
+    UppercaseDirective,
+    FilterByStatusPipe,
+    FilterByYearAscPipe,
+    FilterByUrlPipe,
+  ],
+  imports: [
+    CommonModule,
     ButtonModule,
     RippleModule,
     CardModule,
     BadgeModule,
     TooltipModule,
-    DropdownModule],
-  exports: [ButtonModule,
+    DropdownModule,
+    BadgeModule,
+  ],
+  exports: [
+    ButtonModule,
     RippleModule,
     CardModule,
     UppercaseDirective,
@@ -28,6 +37,9 @@ import { FilterByUrlPipe } from './filters/filterByUrl.filter';
     TooltipModule,
     FilterByStatusPipe,
     FilterByYearAscPipe,
-    DropdownModule, FilterByUrlPipe],
+    DropdownModule,
+    FilterByUrlPipe,
+    BadgeModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

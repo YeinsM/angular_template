@@ -7,6 +7,13 @@
   /* Distribute cards evenly */
 }
 
+textarea {
+  max-width: 100%;
+  /* Evita que se extienda más allá del contenedor */
+  box-sizing: border-box;
+  /* Incluye el padding y borde en el tamaño total */
+}
+
 .card-item {
   margin: 1rem;
   /* Espaciado entre los cards */
