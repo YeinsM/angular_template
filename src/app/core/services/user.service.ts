@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment.prod';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-    private apiUrl = 'http://localhost:5230/api/users';
+    private apiUrl = environment.API_NET_Backend + 'user';
 
     constructor(private http: HttpClient) {}
 
@@ -28,5 +29,9 @@ export class UserService {
 
     deleteUser(id: number): Observable<any> {
         return this.http.delete<any>(`${this.apiUrl}/${id}`);
+    }
+
+    signIn(credentials: any): Observable<any> {
+        return this.http.post<any>(`${this.apiUrl}/signIn`, credentials);
     }
 }
