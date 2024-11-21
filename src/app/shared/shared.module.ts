@@ -10,6 +10,7 @@ import { FilterByStatusPipe } from './filters/filterByStatus.filter';
 import { FilterByYearAscPipe } from './filters/filterByYear.filter';
 import { DropdownModule } from 'primeng/dropdown';
 import { FilterByUrlPipe } from './filters/filterByUrl.filter';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FilterByUrlPipe } from './filters/filterByUrl.filter';
     TooltipModule,
     DropdownModule,
     BadgeModule,
+    InputTextModule,
   ],
   exports: [
     ButtonModule,
@@ -40,6 +42,7 @@ import { FilterByUrlPipe } from './filters/filterByUrl.filter';
     DropdownModule,
     FilterByUrlPipe,
     BadgeModule,
+    InputTextModule,
   ],
 })
 export class SharedModule {}

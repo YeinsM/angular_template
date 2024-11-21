@@ -1,6 +1,6 @@
 /* From Uiverse.io by Yaya12085 */
 .form-container {
-  width: 320px;
+  width: 200px;
   border-radius: 0.75rem;
   background-color: rgba(17, 24, 39, 1);
   padding: 2rem;
@@ -32,10 +32,10 @@
 
 .input-group input {
   width: 100%;
-  border-radius: 0.375rem;
-  border: 1px solid rgba(55, 65, 81, 1);
+  //   border-radius: 0.375rem;
+  //   border: 1px solid rgba(55, 65, 81, 1);
   outline: 0;
-  background-color: rgba(17, 24, 39, 1);
+  //   background-color: rgba(17, 24, 39, 1);
   padding: 0.75rem 1rem;
   color: rgba(243, 244, 246, 1);
 }
@@ -111,7 +111,8 @@
 }
 
 .social-icons .icon svg {
-  height: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
   fill: #fff;
 }
 
@@ -120,4 +121,60 @@
   font-size: 0.75rem;
   line-height: 1rem;
   color: rgba(156, 163, 175, 1);
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+input.invalid {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+// button {
+//   width: 100%;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 4px;
+//   background-color: #3b82f6;
+//   color: white;
+//   font-size: 1rem;
+//   cursor: pointer;
+// }
+
+button[disabled] {
+  background-color: #64748b;
+  cursor: not-allowed;
+}
+
+button.btn-primary:hover {
+  background-color: #2563eb;
 }

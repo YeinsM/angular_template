@@ -46,7 +46,7 @@
         <ng-template pTemplate="end">
             <div class="flex align-items-center gap-2">
                 <app-themes></app-themes>
-                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+                <p-button icon="pi pi-user" [rounded]="true" (click)="showLoginForm()" />
             </div>
         </ng-template>
     </p-menubar>
